@@ -7,20 +7,20 @@ class Cl < Formula
 with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
-  version "0.3.2"
+  version "0.3.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_darwin_x86_64.tar.gz"
-      sha256 "61ec99cc18c794b97752ca9db1a476b7296b6036ed5b396dfba3281bc5d40b77"
+      url "https://github.com/rvigo/cl/releases/download/v0.3.4/cl_0.3.4_darwin_x86_64.tar.gz"
+      sha256 "455887166281d6707734da6b71c1126aea99e4e09716a5fb0e61c9e746f43e67"
 
       def install
         bin.install "cl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_darwin_arm64.tar.gz"
-      sha256 "77914d15a5c9e7c1744bf4b12542c66c2907dd7b13765411d94c6e0230e5e539"
+      url "https://github.com/rvigo/cl/releases/download/v0.3.4/cl_0.3.4_darwin_arm64.tar.gz"
+      sha256 "f2388e7a0319ade01ba61aebe43a3844be46f157b2d1421fe1dd472baa4ccbdf"
 
       def install
         bin.install "cl"
@@ -29,17 +29,17 @@ with a lot of args commands in an organized and human readable place
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_linux_arm64.tar.gz"
-      sha256 "7a15a3a91b749179ba98eb4aac8c5d200076aef1df99b0c387d68324eefec36e"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.4/cl_0.3.4_linux_x86_64.tar.gz"
+      sha256 "edddf2cac83ae48d1c208edf05facff182a11ac141b03a0da4d0108ec1111d4b"
 
       def install
         bin.install "cl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_linux_x86_64.tar.gz"
-      sha256 "48b0a12ea823a240820965147ab622c97505d96af1c93ace6becdb329a295c93"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.4/cl_0.3.4_linux_arm64.tar.gz"
+      sha256 "f8d6aab77d936cae861a074914a40aaf4cc6b1559dd21ea40e4c9db52b028466"
 
       def install
         bin.install "cl"
