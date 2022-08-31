@@ -7,20 +7,20 @@ class Cl < Formula
 with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
-  version "0.3.1"
+  version "0.3.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.1/cl_0.3.1_darwin_arm64.tar.gz"
-      sha256 "8aeda88b6bdc40cdca18f415c06e3df51f26d1361945f87323241826e5f7bff5"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_darwin_x86_64.tar.gz"
+      sha256 "61ec99cc18c794b97752ca9db1a476b7296b6036ed5b396dfba3281bc5d40b77"
 
       def install
         bin.install "cl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.1/cl_0.3.1_darwin_x86_64.tar.gz"
-      sha256 "6f331ea059f1effd53b6af865823145769035b1657bb1b408804883278f3e5fc"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_darwin_arm64.tar.gz"
+      sha256 "77914d15a5c9e7c1744bf4b12542c66c2907dd7b13765411d94c6e0230e5e539"
 
       def install
         bin.install "cl"
@@ -29,17 +29,17 @@ with a lot of args commands in an organized and human readable place
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.1/cl_0.3.1_linux_x86_64.tar.gz"
-      sha256 "5c06ea982686158de86aff620ccc4fa9dd39701061632aba862a1491878eeb8c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_linux_arm64.tar.gz"
+      sha256 "7a15a3a91b749179ba98eb4aac8c5d200076aef1df99b0c387d68324eefec36e"
 
       def install
         bin.install "cl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.1/cl_0.3.1_linux_arm64.tar.gz"
-      sha256 "b5bcf1038ff762a8cb9e1e849121465d101c82f14382d451937a09bdfaa553a7"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.2/cl_0.3.2_linux_x86_64.tar.gz"
+      sha256 "48b0a12ea823a240820965147ab622c97505d96af1c93ace6becdb329a295c93"
 
       def install
         bin.install "cl"
