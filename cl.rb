@@ -7,20 +7,20 @@ class Cl < Formula
 with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
-  version "0.3.8"
+  version "0.3.9"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.8/cl_0.3.8_darwin_arm64.tar.gz"
-      sha256 "e5b1f59eaa412df56cdae2ea3eae4d6126a92cf4c73d7b7a6bdb055bd8b667b5"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.9/cl_0.3.9_darwin_x86_64.tar.gz"
+      sha256 "802dcb4a3c846285a237035b9ca4738e74d7841c1c09edac8453968c3f7c6b0e"
 
       def install
         bin.install "cl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.8/cl_0.3.8_darwin_x86_64.tar.gz"
-      sha256 "c365fa8c49c9ac15324f65a5ac36a1d3f767d195bf1edb0c1dc85f58a3157d02"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/cl/releases/download/v0.3.9/cl_0.3.9_darwin_arm64.tar.gz"
+      sha256 "dec8bb2765649ff917d6d4037ebb2ff048407fc1a77acf7db2b64348b128c87f"
 
       def install
         bin.install "cl"
@@ -30,16 +30,16 @@ with a lot of args commands in an organized and human readable place
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.8/cl_0.3.8_linux_x86_64.tar.gz"
-      sha256 "ebbfd27663be535aab9567f819227897c74673221baa2eecefb3ab2ce271ed99"
+      url "https://github.com/rvigo/cl/releases/download/v0.3.9/cl_0.3.9_linux_x86_64.tar.gz"
+      sha256 "e9986e10250430819a6ea3dde75b6c617dad020972537ba9888c5a267549c2c7"
 
       def install
         bin.install "cl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/cl/releases/download/v0.3.8/cl_0.3.8_linux_arm64.tar.gz"
-      sha256 "e28a01abe14dcbb01d08b2b767771a91c755398491093902db9ffa95c56f23a3"
+      url "https://github.com/rvigo/cl/releases/download/v0.3.9/cl_0.3.9_linux_arm64.tar.gz"
+      sha256 "1986df9a0ab0b58aacdebdab543e9717e95975080a8e150250e337d973165c46"
 
       def install
         bin.install "cl"
