@@ -7,20 +7,20 @@ class Cl < Formula
 with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
-  version "0.4.1"
+  version "0.4.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.1/cl_0.4.1_darwin_x86_64.tar.gz"
-      sha256 "502baaa4178953f4980281bc9f388be09e594fa2930a8c3c223e0ababf3c9eec"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_darwin_x86_64.tar.gz"
+      sha256 "3e7414fa83439b19a8d2d2993540d15df52bff380e4d6df3cc77dc3f43066df4"
 
       def install
         bin.install "cl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.1/cl_0.4.1_darwin_arm64.tar.gz"
-      sha256 "2e8758917e02586635f4865f9da5f7e2c9f282a7afa24b7303ad9aed44c31547"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_darwin_arm64.tar.gz"
+      sha256 "f7aa137b5e4c874dcceee081be56dad488bfec18d552a6663355f90411a97a73"
 
       def install
         bin.install "cl"
@@ -30,16 +30,16 @@ with a lot of args commands in an organized and human readable place
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.1/cl_0.4.1_linux_x86_64.tar.gz"
-      sha256 "f308d8b68cee93dfcd54b2304cb933530340c26dbc09cab7faedc17cd53119d6"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_linux_x86_64.tar.gz"
+      sha256 "2eac2bf11b37e3c6743bc37bdd10f1ea9f9578b67b523e466625328cb2f76ff4"
 
       def install
         bin.install "cl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.1/cl_0.4.1_linux_arm64.tar.gz"
-      sha256 "ad9fb5e38257369eb4e63cdb1f51db383e9cccc5afc82b4283b82fca6993b2fa"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_linux_arm64.tar.gz"
+      sha256 "6e265599ba4d66914227ab34154f9f5d61cecca56bb3ddc7195107785d34a041"
 
       def install
         bin.install "cl"
