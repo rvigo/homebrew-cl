@@ -7,43 +7,56 @@ class Cl < Formula
 with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
-  version "0.4.2"
+  version "0.4.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_darwin_x86_64.tar.gz"
-      sha256 "3e7414fa83439b19a8d2d2993540d15df52bff380e4d6df3cc77dc3f43066df4"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.4/cl_0.4.4_darwin_x86_64.tar.gz"
+      sha256 "3ea844a3bdd74038a308ddbff29ac300f33e50b74e4e7ab2aff2b2f5bb74edf6"
 
       def install
         bin.install "cl"
+        zsh_completion.install "completions/zsh/_cl" => "_cl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_darwin_arm64.tar.gz"
-      sha256 "f7aa137b5e4c874dcceee081be56dad488bfec18d552a6663355f90411a97a73"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.4/cl_0.4.4_darwin_arm64.tar.gz"
+      sha256 "9b8793ea4a1625614d46a46b805ca7f43e6feee6ad3850a6b1a4ae7703b5678f"
 
       def install
         bin.install "cl"
+        zsh_completion.install "completions/zsh/_cl" => "_cl"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_linux_x86_64.tar.gz"
-      sha256 "2eac2bf11b37e3c6743bc37bdd10f1ea9f9578b67b523e466625328cb2f76ff4"
-
-      def install
-        bin.install "cl"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/cl/releases/download/v0.4.2/cl_0.4.2_linux_arm64.tar.gz"
-      sha256 "6e265599ba4d66914227ab34154f9f5d61cecca56bb3ddc7195107785d34a041"
+      url "https://github.com/rvigo/cl/releases/download/v0.4.4/cl_0.4.4_linux_arm64.tar.gz"
+      sha256 "6815519607323c3895dac4d8c41ef1a40c19abbc93ed7b5ea01c644e03de31ac"
 
       def install
         bin.install "cl"
+        zsh_completion.install "completions/zsh/_cl" => "_cl"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/cl/releases/download/v0.4.4/cl_0.4.4_linux_x86_64.tar.gz"
+      sha256 "55291efb8f3c4d4c9f5e10223213c1864d2fbc0cfede23029842025760b61cdf"
+
+      def install
+        bin.install "cl"
+        zsh_completion.install "completions/zsh/_cl" => "_cl"
+      end
+    end
+  end
+
+  def caveats
+    <<~EOS
+      In order to get cl completion (only available for ZSH shell),
+      be sure that $(brew --prefix)/share/zsh/site-functions is present in $FPATH.
+      If not, add the following line to your ~/.zshrc, BEFORE any call to compinit:
+      FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    EOS
   end
 end
