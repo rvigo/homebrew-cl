@@ -7,21 +7,21 @@ class Cl < Formula
 with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
-  version "0.5.4"
+  version "0.6.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.5.4/cl_0.5.4_darwin_x86_64.tar.gz"
-      sha256 "e6894021244915572b9f155f82935c0dd5fda4f0bcb57c1dcf1e6d1c1135cdc9"
+    if Hardware::CPU.arm?
+      url "https://github.com/rvigo/cl/releases/download/v0.6.0/cl_0.6.0_darwin_arm64.tar.gz"
+      sha256 "0a3f0867bd7e65c833d6c55223e4153ddc72520ed5a5df7d75e9cb15bf2950b5"
 
       def install
         bin.install "cl"
         zsh_completion.install "completions/zsh/_cl" => "_cl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/rvigo/cl/releases/download/v0.5.4/cl_0.5.4_darwin_arm64.tar.gz"
-      sha256 "b0d1f8cf80d8c18b611469c0a38881e69cd67fc22c2010cb53654e6b0b119251"
+    if Hardware::CPU.intel?
+      url "https://github.com/rvigo/cl/releases/download/v0.6.0/cl_0.6.0_darwin_x86_64.tar.gz"
+      sha256 "5f2788f98dec6b01a0fc649ea005b5ead667c130a6698bbf7e8921da56db389a"
 
       def install
         bin.install "cl"
@@ -32,8 +32,8 @@ with a lot of args commands in an organized and human readable place
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/rvigo/cl/releases/download/v0.5.4/cl_0.5.4_linux_x86_64.tar.gz"
-      sha256 "af986a0f683bf957f7930817bb76dadc307d7d2c489d06ed4c786e946eeb5ed2"
+      url "https://github.com/rvigo/cl/releases/download/v0.6.0/cl_0.6.0_linux_x86_64.tar.gz"
+      sha256 "f12bfc40098267d51f9f22d096a61ac8848ae6c676148bb48617ccb17928c686"
 
       def install
         bin.install "cl"
@@ -41,8 +41,8 @@ with a lot of args commands in an organized and human readable place
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rvigo/cl/releases/download/v0.5.4/cl_0.5.4_linux_arm64.tar.gz"
-      sha256 "79ff6bdbda46a4d98fc4198f303d1a8324dd3ac2975ce3f541c04b6804e24d35"
+      url "https://github.com/rvigo/cl/releases/download/v0.6.0/cl_0.6.0_linux_arm64.tar.gz"
+      sha256 "b3f3dd837406b4701f2008ff59947c25c568b1d38361a42e3d5d7607e7e49b1d"
 
       def install
         bin.install "cl"
