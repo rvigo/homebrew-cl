@@ -7,6 +7,7 @@ with a lot of args commands in an organized and human readable place
 "
   homepage "https://github.com/rvigo/cl"
   version "0.9.4"
+  revision "2de0db4723f8e5f03ac6bb528baf7d15d3fc30d9"
 
   on_macos do
     if Hardware::CPU.arm?
