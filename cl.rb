@@ -12,7 +12,7 @@ with a lot of args commands in an organized and human readable place
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl_0.9.3_darwin_arm64.tar.gz"
-      sha256 "7ca3bf8a5f89e1ca2d35f60ad7ae902d6ce95ae3491a5aa2571d8f51569184b2"
+      sha256 "d64caccb8efd36ad5053a5e94f7e3f940a3e376ba213fcbc6001ee23870d0576"
 
       def install
         bin.install "cl"
@@ -21,7 +21,7 @@ with a lot of args commands in an organized and human readable place
     end
     if Hardware::CPU.intel?
       url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl_0.9.3_darwin_amd64.tar.gz"
-      sha256 "c54f96bfe7d6799af81883638bdb23c2b3ea5948ddb7b037798ce1fb9000e95e"
+      sha256 "7498dab4cd76140492e709c2ced2b8f11dd62dd884d48d225353b358d5015503"
 
       def install
         bin.install "cl"
@@ -33,7 +33,7 @@ with a lot of args commands in an organized and human readable place
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl_0.9.3_linux_arm64.tar.gz"
-      sha256 "19b393ccdb7a8f804e2a529ffd37d3d8e83722b0ce7a0cef83fc35e8ed004624"
+      sha256 "9ce14ce19bc4e7d7e014e905d42c29738675bb0c6084a4e058b2622a02f47fe7"
 
       def install
         bin.install "cl"
@@ -42,7 +42,7 @@ with a lot of args commands in an organized and human readable place
     end
     if Hardware::CPU.intel?
       url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl_0.9.3_linux_amd64.tar.gz"
-      sha256 "f5e7d2ecaf8a5a7b4a83faffe82145f7d37c38d9b50bcc877efa316cd0899ef3"
+      sha256 "d0f331b13adb9494e564344ade6544672f70f90bd2f16b6e13bde4cdeeb3c418"
 
       def install
         bin.install "cl"
