@@ -12,8 +12,8 @@ with a lot of args commands in an organized and human readable place
 
     on_linux do
         if Hardware::CPU.intel?
-            url "https://api.github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-x86_64-linux.tar.gz"
-            sha256 "4c9635095f120b7809c3058dbeee0d7dd1dea61d9ac96a9d97133522f236d5f2"
+            url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-x86_64-linux.tar.gz"
+            sha256 "e70d6c7050ae39dc382998b828db70fde8f6b58ca8e569645b7321380b09a2de"
 
             def install
                 bin.install "cl"
@@ -21,8 +21,8 @@ zsh_completion.install "completions/zsh/_cl" => "_cl"
             end
         end
         if Hardware::CPU.arm?
-            url "https://api.github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-aarch64-linux.tar.gz"
-            sha256 "12db813514e720d01e7f5cc7848ffc4f5cdbc7a2cbfa38c7a2096a23b97d4170"
+            url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-aarch64-linux.tar.gz"
+            sha256 "5d18cfba4af933f58b5bdc124fdb3178e151c96bb0b4e1ab9f589242e76290cc"
 
             def install
                 bin.install "cl"
@@ -32,8 +32,8 @@ zsh_completion.install "completions/zsh/_cl" => "_cl"
     end
     on_macos do
         if Hardware::CPU.arm?
-            url "https://api.github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-aarch64-apple.tar.gz"
-            sha256 "9eb6a5f2d9794a1884ebb8b2277266e59d647c60b8de87b31f4d3d17074d0268"
+            url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-aarch64-apple.tar.gz"
+            sha256 "4bce20d51e4aeeef1579a8a595e92ecfbb7799a0ae876fddfc18a2bda113d4ec"
 
             def install
                 bin.install "cl"
@@ -41,8 +41,8 @@ zsh_completion.install "completions/zsh/_cl" => "_cl"
             end
         end
         if Hardware::CPU.intel?
-            url "https://api.github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-x86_64-apple.tar.gz"
-            sha256 "9ac7e635b7d88b88ebe09ebc5fc039231913a335cdd8e01c679383e6b5acc849"
+            url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-x86_64-apple.tar.gz"
+            sha256 "cc213f08c8e01ebdf3e9b782bc9e0fc493a08ff7447a0516d6cde2d02b56dd76"
 
             def install
                 bin.install "cl"
