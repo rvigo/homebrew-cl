@@ -13,7 +13,7 @@ with a lot of args commands in an organized and human readable place
     on_linux do
         if Hardware::CPU.intel?
             url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-x86_64-linux.tar.gz"
-            sha256 "e70d6c7050ae39dc382998b828db70fde8f6b58ca8e569645b7321380b09a2de"
+            sha256 "90077d09a857bfd4554e09d7886b42a42557208c0322c70db60a749a13e47442"
 
             def install
                 bin.install "cl"
@@ -22,7 +22,7 @@ zsh_completion.install "completions/zsh/_cl" => "_cl"
         end
         if Hardware::CPU.arm?
             url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-aarch64-linux.tar.gz"
-            sha256 "5d18cfba4af933f58b5bdc124fdb3178e151c96bb0b4e1ab9f589242e76290cc"
+            sha256 "c1992dc6e083319f330062ef085db7a4376d820807af4bbaaf92f41a41973124"
 
             def install
                 bin.install "cl"
@@ -33,7 +33,7 @@ zsh_completion.install "completions/zsh/_cl" => "_cl"
     on_macos do
         if Hardware::CPU.arm?
             url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-aarch64-apple.tar.gz"
-            sha256 "4bce20d51e4aeeef1579a8a595e92ecfbb7799a0ae876fddfc18a2bda113d4ec"
+            sha256 "e82be27827971c5d5358401995595668add93b33aeeeafb62f9a1612ca24fb29"
 
             def install
                 bin.install "cl"
@@ -42,7 +42,7 @@ zsh_completion.install "completions/zsh/_cl" => "_cl"
         end
         if Hardware::CPU.intel?
             url "https://github.com/rvigo/cl/releases/download/v0.9.3/cl-v0.9.3-x86_64-apple.tar.gz"
-            sha256 "cc213f08c8e01ebdf3e9b782bc9e0fc493a08ff7447a0516d6cde2d02b56dd76"
+            sha256 "c514c08828194e0174ee9322ed72efad4ea162e302502dc3d62f2e0303c1b2e1"
 
             def install
                 bin.install "cl"
