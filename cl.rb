@@ -11,10 +11,7 @@ class Cl < Formula
   license "CC0-1.0"
   head "https://github.com/rvigo/cl.git", branch: "main"
 
-  depends_on "rust" => :build
-
   def install
-    system "cargo", "install", *std_cargo_args
     zsh_completion.install "completions/zsh/_cl" => "_cl"
   end
 
