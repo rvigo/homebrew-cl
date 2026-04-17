@@ -1,0 +1,45 @@
+name: Update formula
+
+on:
+  repository_dispatch:
+    types: [new-release]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update cl.rb
+        env:
+          TAG: ${{ github.event.client_payload.tag }}
+          SHA256: ${{ github.event.client_payload.sha256 }}
+        run: |
+          sed -i \
+            "s|url \"https://github.com/rvigo/cl/archive/refs/tags/v[^\"]*\"|url \"https://github.com/rvigo/cl/archive/refs/tags/${TAG}.tar.gz\"|" \
+            cl.rb
+          sed -i \
+            "s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256}\"/" \
+            cl.rb
+
+      - name: Open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.client_payload.tag }}
+        run: |
+          BRANCH="formula-update-${TAG}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push origin --delete "${BRANCH}" 2>/dev/null || true
+          git checkout -b "${BRANCH}"
+          git add cl.rb
+          git commit -m "update cl.rb for ${TAG}"
+          git push origin "${BRANCH}"
+          gh pr create \
+            --title "Update cl formula to ${TAG}" \
+            --body "Automated formula update triggered by release ${TAG}." \
+            --base main \
+            --head "${BRANCH}"
